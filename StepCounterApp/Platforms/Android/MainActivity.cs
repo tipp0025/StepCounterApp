@@ -29,7 +29,7 @@ public class MainActivity : MauiAppCompatActivity, ISensorEventListener
         {
             if (CheckSelfPermission(Android.Manifest.Permission.ActivityRecognition) != Permission.Granted)
             {
-                RequestPermissions(new string[] { Android.Manifest.Permission.ActivityRecognition }, -1);
+                RequestPermissions(new string[] { Android.Manifest.Permission.ActivityRecognition }, 0);
             }
         }
     }
