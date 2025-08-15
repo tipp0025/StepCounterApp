@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using StepCounterApp.Services;
 
 namespace StepCounterApp;
 
@@ -17,6 +18,10 @@ public static class MauiProgram
 
 #if DEBUG
         builder.Logging.AddDebug();
+#endif
+
+#if ANDROID
+        builder.Services.AddSingleton<IStepCounterService, StepCounterService>();
 #endif
 
         return builder.Build();
